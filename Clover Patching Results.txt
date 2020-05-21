@@ -1,0 +1,40 @@
+Clover Patching Verification Notes
+==================================
+
+Using original DSDT/SSDT data (via Clover) and patched ones (via MaciASL)these patches are confirmed:
+
+* Device (HDEF) change of Method (_DSM) to Method (_XSM) was patched.
+* All Device (PXSX) change of Method (_DSM) to Method (_XSM) were patched.
+* Change remaining Method (_DSM) everywhere to Method (XDSM) was successful.
+* Rename everywhere variable _OSI to XOSI was successful thus allowing external Method (in SSDT).
+* Rename everywhere Device (B0D3) to Device (HDAU) was successful.
+* Changing everywhere names of Device (EHC1) to (EH01) and Device (EHC2) to (EH02) was successful.
+* Rename everywhere Device (GFX0) to Device (IGPU) was successful.
+* Rename everywhere Device (HECI) to Device (IMEI) was successful.
+* Rename everywhere Device (SAT0) to Device (SATA) was successful.
+* Rename device _SB.PCI0.RP03.PXSX to _SB.PCI0.RP03.LAN1 was successful.
+* Rename device _SB.PCI0.RP04.PXSX to _SB.PCI0.RP04.LAN2 was successful.
+* Rename device _SB.PCI0.RP05.PXSX to _SB.PCI0.RP05.ARPT was successful.
+
+USB Port Listing:
+
+HS01 - USB 2.0 just under the RIGHT Ethernet socket;
+HS02 - USB 2.0 under the RIGHT Ethernet socket at the bottom;
+HS03 - USB 2.0 just under the LEFT Ethernet socket;
+HS04 - USB 2.0 under the LEFT Ethernet socket at the bottom;
+HS05 - USB 2.0 just under the PS/2 Keyboard socket;
+HS06 - USB 2.0 under the PS/2 Keyboard socket at the bottom;
+HS07 - USB 2.0 internal device for Broadcom Bluetooth module;
+HS08 - Unused
+HS09 - USB 2.0 Front panel/chassis BOTTOM USB port;
+HS10 - USB 2.0 Front panel/chassis TOP USB port;
+HS11 - Unused
+HS12 - Unused
+HS13 - Unused
+HS14 - Unused
+SS01 - USB 3.0 just under the RIGHT Ethernet socket;
+SS02 - USB 3.0 under the RIGHT Ethernet socket at the bottom;
+SS03 - USB 3.0 just under the LEFT Ethernet socket;
+SS04 - USB 3.0 under the LEFT Ethernet socket at the bottom;
+SS05 - USB 3.0 Front panel/chassis BOTTOM USB port;
+SS06 - USB 3.0 Front panel/chassis TOP USB port;
