@@ -1,4 +1,4 @@
-# MSI Z97I-AC
+# MSI Z97i-AC
 
 ## Generation
 * Sandy Bridge = All Core ix-3xxx (HD Graphics 3000)
