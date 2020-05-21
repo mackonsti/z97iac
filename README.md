@@ -17,6 +17,8 @@
 * **Slots:** 1 x PCI-Express Generation 3 (x16)
 * **LAN:** 2 x Realtek 8111E (Gigabit)
 * **Audio:** Realtek ALC892
+* **WLAN:** Broadcom BCM94352HMB (AzureWave AW-CE123H)
+* **BTLE:** Broadcom BCM20702A3
 
 **Specifications:** https://www.msi.com/Motherboard/Z97I-AC/Specification<br/>
 **Downloads:** https://www.msi.com/Motherboard/support/Z97I-AC<br/>
