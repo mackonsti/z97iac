@@ -27,7 +27,9 @@ CPU: Intel Core i7-4790K @ 4.00 GHz up to 4.40 GHz / 4 Cores / 8 Threads (LGA 11
 GPU: Intel HD Graphics 4600 / 350 MHz up to 1.25 GHz
 URL: https://ark.intel.com/content/www/us/en/ark/products/80807/intel-core-i7-4790k-processor-8m-cache-up-to-4-40-ghz.html
 
-Geekbench: https://browser.geekbench.com/v4/cpu/search?q=Core+i7-4790K
+Geekbench:
+V4 Scores: https://browser.geekbench.com/v4/cpu/search?q=Core+i7-4790K
+V5 Scores: https://browser.geekbench.com/v5/cpu/search?q=Core+i7-4790K
 
 Mac Model: iMac15,1
 CPU: Core i7-4790K @ 4.00 GHz up to 4.40 GHz / 4 Cores / 8 Threads
