@@ -16,7 +16,7 @@
  *
  */
 
-DefinitionBlock ("SSDT-UIAC.aml", "SSDT", 1, "Hack", "_UIAC", 0x00000000)
+DefinitionBlock ("SSDT-UIAC.aml", "SSDT", 1, "Clover", "UIAC", 0x00000000)
 {
     Device (UIAC)
     {

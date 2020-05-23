@@ -18,8 +18,8 @@
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150930 (538249520)
  *
- *     - Adds other generic devices (MCHC) and (BUS0) for improved I/O device compatibility
- *     - Adds needed device (EC) by MacOS Catalina installation
+ *     - Added other generic devices (MCHC) and (BUS0) for improved I/O device compatibility
+ *     - Added needed device (EC) by MacOS Catalina installation
  */
 
 DefinitionBlock ("SSDT-OTHER.aml", "SSDT", 1, "Clover", "DevInj", 0x00003000)

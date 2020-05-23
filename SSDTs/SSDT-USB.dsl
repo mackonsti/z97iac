@@ -19,7 +19,7 @@
  *     Compiler Version 0x20150930 (538249520)
  *
  *     - Original devices (EHC1) (EHC2) renamed (EH01) (EH02) via Clover DSDT patching
- *     - Introduces minor code improvements to (EH01) (EH02) and (XHC)
+ *     - Introduced minor code improvements to (EH01) (EH02) and (XHC)
  */
 
 DefinitionBlock ("SSDT-USB.aml", "SSDT", 1, "Clover", "DevInj", 0x00003000)

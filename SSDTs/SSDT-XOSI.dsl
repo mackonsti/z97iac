@@ -31,12 +31,14 @@
  *
  */
 
-DefinitionBlock ("SSDT-XOSI.aml", "SSDT", 1, "Clover", "_XOSI", 0x00000000)
+DefinitionBlock ("SSDT-XOSI.aml", "SSDT", 1, "Clover", "XOSI", 0x00000000)
 {
     // All official _OSI calls in DSDT are routed to XOSI via Clover patch.
     // This XOSI below now simulates "Windows 2015" (which is Windows 10).
     // Note: According to ACPI spec, _OSI("Windows") must also return true.
     // Also, it should return true for all previous versions of Windows.
+    //
+    // Definitions: https://docs.microsoft.com/en-us/windows-hardware/drivers/acpi/winacpi-osi
 
     Method (XOSI, 1, NotSerialized)
     {

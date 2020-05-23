@@ -13,7 +13,7 @@
  * the device (EHC1 or EHC2) is used by macOS. Check the IORegistry first.
  */
 
-DefinitionBlock ("SSDT-EHCI-OFF.aml", "SSDT", 2, "ACDT", "EHCx_OFF", 0x00000000)
+DefinitionBlock ("SSDT-EHCI-OFF.aml", "SSDT", 1, "Clover", "EHCI-OFF", 0x00000000)
 {
     Scope (\)
     {
@@ -32,7 +32,8 @@ DefinitionBlock ("SSDT-EHCI-OFF.aml", "SSDT", 2, "ACDT", "EHCx_OFF", 0x00000000)
             // yet on select pre-Windows 10 it may cause issues.
             // Remove If (_OSI ("Darwin")) in case you have none.
 
-            If (_OSI ("Darwin")) {
+            If (_OSI ("Darwin"))
+            {
                 EH1D = One  // Disable EHC1
                 EH2D = One  // Disable EHC2
             }

@@ -18,7 +18,7 @@
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150930 (538249520)
  *
- *     - Introduces needed code fixes to (HDEF) for improved device detection
+ *     - Introduced needed code fixes to (HDEF) for improved device detection
  */
 
 DefinitionBlock ("SSDT-HDEF.aml", "SSDT", 1, "Clover", "DevInj", 0x00003000)

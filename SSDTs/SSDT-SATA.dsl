@@ -19,7 +19,7 @@
  *     Compiler Version 0x20150930 (538249520)
  *
  *     - Original device (SAT0) renamed (SATA) via Clover DSDT patching
- *     - Adds compatibility ID only to (SATA) as (LPCB) is detected natively
+ *     - Added compatibility ID only to (SATA) as (LPCB) is detected natively
  *
  *     References:
  *     /System/Library/Extensions/AppleLPC.kext/Contents/Info.plist
