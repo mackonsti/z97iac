@@ -6324,7 +6324,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000023)
                 }
             }
 
-            // Removed Section
+            // Zero Section Removed
         }
 
         Scope (\_GPE)
@@ -10027,7 +10027,6 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000023)
         If (CondRefOf (MDBG))
         {
             Return (MDBG) /* External reference */
-         // Removed Section
         }
 
         Return (Zero)
