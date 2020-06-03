@@ -23,10 +23,10 @@ Most of the SSDTs here injected a *Method* really, after enabling the respective
 
 By renaming the native _DSM to XDSM, this allowed for custom Method (_DSM) to be injected via these SSDTs for device properties, mostly prior to macOS Catalina.
 
-* SSDT-GIGE: Injected Methods for device (LAN1) and (LAN2) properties;
+* SSDT-GIGE: Injected Methods for devices (LAN1) and (LAN2) properties;
 * SSDT-HDEF: Injected Method for device (HDEF) properties and Layout ID;
 * SSDT-SATA: Injected Methods for devices (LPCB) and (SATA) for compatibility;
-* SSDT-USB:  Injected Methods for device (EH01) (EH02) (XHC) properties;
+* SSDT-USB:  Injected Methods for devices (EH01) (EH02) (XHC) properties;
 * SSDT-WLAN: Injected Method for device (ARPT) properties.
 
 Additionally:
