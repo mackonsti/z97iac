@@ -26,12 +26,12 @@ By renaming the native _DSM to XDSM, this allowed for custom Method (_DSM) to be
 * SSDT-GIGE: Injected Methods for devices (LAN1) and (LAN2) properties;
 * SSDT-HDEF: Injected Method for device (HDEF) properties and Layout ID;
 * SSDT-SATA: Injected Methods for devices (LPCB) and (SATA) for compatibility;
-* SSDT-USB:  Injected Methods for devices (EH01) (EH02) (XHC) properties;
+* SSDT-USB: Injected Methods for devices (EH01) (EH02) (XHC) properties;
 * SSDT-WLAN: Injected Method for device (ARPT) properties.
 
 Additionally:
 
-* SSDT-EHCI-OFF: A working code-injection that successfully disables the EHCI controller;
-* SDST-OTHER: Assign names to devices that appear otherwise nameless in IORegistryExplorer;
-* SSDT-UIAC: Motherboard USB ports definition for using with *USBInjectAll.kext* that solve USB limit;
+* SSDT-EHCI-OFF: A working code-injection that successfully disables the EHCI controller (useful for OpenCore);
+* SDST-OTHER: Assign names to devices that appear otherwise nameless in IORegistryExplorer (like MCHC);
+* SSDT-UIAC: Motherboard USB ports definition for using with *USBInjectAll.kext* thus solving USB problems;
 * SSDT-XOSI: Routing of official _OSI calls in DSDT to XOSI via Clover patch, allowing for OS simulation.
