@@ -1,4 +1,5 @@
 00:00.0 Host bridge [0600]: Intel Corporation 4th Generation Core Processor DRAM Controller [8086:0c00] (rev 06)
+00:01.0 PCI bridge [0604]: Intel Corporation Xeon E3-1200 v3/4th Generation Core Processor PCI Express x16 Controller [8086:0c01] (rev 06)
 00:02.0 VGA compatible controller [0300]: Intel Corporation Xeon E3-1200 v3/4th Generation Core Processor Integrated Graphics Controller [8086:0412] (rev 06)
 00:03.0 Audio device [0403]: Intel Corporation Xeon E3-1200 v3/4th Generation Core Processor HD Audio Controller [8086:0c0c] (rev 06)
 00:14.0 USB controller [0c03]: Intel Corporation 9 Series Chipset Family USB xHCI Controller [8086:8cb1]
@@ -13,6 +14,10 @@
 00:1f.0 ISA bridge [0601]: Intel Corporation 9 Series Chipset Family Z97 LPC Controller [8086:8cc4]
 00:1f.2 SATA controller [0106]: Intel Corporation 9 Series Chipset Family SATA Controller [AHCI Mode] [8086:8c82]
 00:1f.3 SMBus [0c05]: Intel Corporation 9 Series Chipset Family SMBus Controller [8086:8ca2]
-02:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 0c)
+01:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Baffin [Radeon RX 560] Display Controller [1002:67ff] (rev cf)
+01:00.1 Audio device [0403]: Advanced Micro Devices, Inc. [AMD/ATI] Baffin [Radeon RX 560] HDMI/DP Multimedia Audio Controller [1002:aae0]
 03:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 0c)
-04:00.0 Network controller [0280]: Broadcom Corporation BCM4352 802.11ac Wireless Network Adapter [14e4:43b1] (rev 03)
+04:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 0c)
+05:00.0 Network controller [0280]: Broadcom Corporation BCM4352 802.11ac Wireless Network Adapter [14e4:43b1] (rev 03)
+
+More PCI Classes at: https://pci-ids.ucw.cz/read/PC/
