@@ -1,4 +1,4 @@
-## DSDT Code Modification & Edits
+# DSDT Code Improvements & Edits
 
 Version 1:
 * Compilation without errors

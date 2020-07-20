@@ -26,8 +26,8 @@ By renaming the native _DSM to XDSM, this allowed for custom Method (_DSM) to be
 * SSDT-GIGE: Injected Methods for devices (LAN1) and (LAN2) properties;
 * SSDT-HDEF: Injected Method for device (HDEF) properties and Layout ID;
 * SSDT-SATA: Injected Methods for devices (LPCB) and (SATA) for compatibility;
-* SSDT-USB: Injected Methods for devices (EH01) (EH02) (XHC) properties;
-* SSDT-WLAN: Injected Method for device (ARPT) properties.
+* SSDT-USB: Injected Methods for devices (EH01) (EH02) (XHC) vanilla properties;
+* SSDT-WLAN: Injected Method for device (ARPT) compatibility properties.
 
 Additionally:
 

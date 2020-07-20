@@ -1,4 +1,4 @@
-## USB Ports Patching
+# USB Ports Patching
 
 This is the original USB ports patching effort, leading to the creation of **USBPorts.kext** via Hackintool.<br/>
 
