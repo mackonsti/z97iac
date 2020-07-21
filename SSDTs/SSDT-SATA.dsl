@@ -9,12 +9,12 @@
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003E8 (1000)
- *     Revision         0x01
+ *     Length           0x00000000 (0000)
+ *     Revision         0x00
  *     Checksum         0x00
  *     OEM ID           "Clover"
  *     OEM Table ID     "1"
- *     OEM Revision     0x00003000 (12288)
+ *     OEM Revision     0x00000000 (00000)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150930 (538249520)
  *
@@ -26,7 +26,7 @@
  *     /System/Library/Extensions/AppleAHCIPort.kext/Contents/Info.plist
  */
 
-DefinitionBlock ("SSDT-SATA.aml", "SSDT", 1, "Clover", "DevInj", 0x00003000)
+DefinitionBlock ("SSDT-SATA.aml", "SSDT", 1, "Clover", "DevInj", 0x00000000)
 {
 //  Method (\_SB.PCI0.LPCB._DSM, 4, NotSerialized)  // Intel Corporation 9 Series Chipset Family Z97 LPC Controller [8086:8cc4]
 //  {

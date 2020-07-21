@@ -6,7 +6,7 @@
  * Original Table Header:
  *     Signature        "SSDT"
  *     Length           0x00000000 (0000)
- *     Revision         0x01
+ *     Revision         0x00
  *     Checksum         0x00
  *     OEM ID           "Clover"
  *     OEM Table ID     "1"

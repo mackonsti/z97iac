@@ -35,3 +35,10 @@ Additionally:
 * SDST-OTHER: Assign names to devices that appear otherwise nameless in IORegistryExplorer (like MCHC);
 * SSDT-UIAC: Motherboard USB ports definition for using with *USBInjectAll.kext* thus solving USB problems;
 * SSDT-XOSI: Routing of official _OSI calls in DSDT to XOSI via Clover patch, allowing for OS simulation.
+
+Previous SSDTs:
+* SSDT-GIGE-WLAN: Injected Methods for all original devices (PXSX) properties;
+* SSDT-HD4600: Original injected Methods for devices (IGPU) and (HDAU) properties;
+* SSDT-IGPU: Injected Methods for devices (IGPU) (HDAU) and (IMEI) for compatibility;
+* SSDT-SATA: Injected Methods for devices (LPCB) and (SATA) for compatibility;
+* SSDT-USB: Injected Methods for original devices (EHC1) (EHC2) (XHC) vanilla properties;

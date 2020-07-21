@@ -18,48 +18,45 @@
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150930 (538249520)
  *
- *     - Original devices (EHC1) (EHC2) renamed (EH01) (EH02) via Clover DSDT patching
- *     - Introduced minor code improvements to (EH01) (EH02) and (XHC)
+ *     - Introduced minor code fixes to (EHC1) (EHC2) and (XHC)
  */
 
 DefinitionBlock ("SSDT-USB.aml", "SSDT", 1, "Clover", "DevInj", 0x00000000)
 {
-    Method (\_SB.PCI0.EH01._DSM, 4, NotSerialized)  // Intel Corporation 9 Series Chipset Family USB EHCI Controller #1 [8086:8ca6]
+    Method (\_SB.PCI0.EHC1._DSM, 4, NotSerialized)  // Intel Corporation 9 Series Chipset Family USB EHCI Controller #1 [8086:8ca6]
     {
         If (LEqual (Arg2, Zero))
         {
             Return (Buffer (One) {0x03})
         }
 
-        Return (Package (0x12)
+        Return (Package (0x10)
         {
             "AAPL,current-available",         0x0834,  // 2100mA
             "AAPL,current-extra",             0x0898,  // 2200mA
             "AAPL,current-in-sleep",          0x03E8,  // 1000mA
             "AAPL,current-extra-in-sleep",    0x0640,  // 1600mA
             "AAPL,max-port-current-in-sleep", 0x0834,  // 2100mA
-            "AAPL,device-internal",           0x01,
             "AAPL,clock-id",                  Buffer (0x01) {0x01},
             "device_type",                    Buffer (0x05) {"EHCI"},
             "model",                          Buffer (0x3E) {"Intel Corporation 9 Series Chipset Family USB EHCI Controller"}
         })
     }
 
-    Method (\_SB.PCI0.EH02._DSM, 4, NotSerialized)  // Intel Corporation 9 Series Chipset Family USB EHCI Controller #2 [8086:8cad]
+    Method (\_SB.PCI0.EHC2._DSM, 4, NotSerialized)  // Intel Corporation 9 Series Chipset Family USB EHCI Controller #2 [8086:8cad]
     {
         If (LEqual (Arg2, Zero))
         {
             Return (Buffer (One) {0x03})
         }
 
-        Return (Package (0x12)
+        Return (Package (0x10)
         {
             "AAPL,current-available",         0x0834,  // 2100mA
             "AAPL,current-extra",             0x0898,  // 2200mA
             "AAPL,current-in-sleep",          0x03E8,  // 1000mA
             "AAPL,current-extra-in-sleep",    0x0640,  // 1600mA
             "AAPL,max-port-current-in-sleep", 0x0834,  // 2100mA
-            "AAPL,device-internal",           0x02,
             "AAPL,clock-id",                  Buffer (0x01) {0x02},
             "device_type",                    Buffer (0x05) {"EHCI"},
             "model",                          Buffer (0x3E) {"Intel Corporation 9 Series Chipset Family USB EHCI Controller"}
@@ -73,14 +70,13 @@ DefinitionBlock ("SSDT-USB.aml", "SSDT", 1, "Clover", "DevInj", 0x00000000)
             Return (Buffer (One) {0x03})
         }
 
-        Return (Package (0x12)
+        Return (Package (0x10)
         {
             "AAPL,current-available",         0x0834,  // 2100mA
             "AAPL,current-extra",             0x0898,  // 2200mA
             "AAPL,current-in-sleep",          0x03E8,  // 1000mA
             "AAPL,current-extra-in-sleep",    0x0640,  // 1600mA
             "AAPL,max-port-current-in-sleep", 0x0834,  // 2100mA
-            "AAPL,device-internal",           0x03,
             "AAPL,clock-id",                  Buffer (0x01) {0x03},
             "device_type",                    Buffer (0x05) {"XHCI"},
             "model",                          Buffer (0x3E) {"Intel Corporation 9 Series Chipset Family USB XHCI Controller"}

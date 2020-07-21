@@ -9,19 +9,19 @@
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000003E8 (1000)
- *     Revision         0x01
+ *     Length           0x00000000 (0000)
+ *     Revision         0x00
  *     Checksum         0x00
- *     OEM ID           "Releas"
+ *     OEM ID           "Clover"
  *     OEM Table ID     "1"
- *     OEM Revision     0x00003000 (12288)
+ *     OEM Revision     0x00000000 (00000)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20150930 (538249520)
  *
  *     - Original device (PXSX) renamed (ARPT) via Clover DSDT patching
  */
 
-DefinitionBlock ("SSDT-WLAN.aml", "SSDT", 1, "Clover", "DevInj", 0x00003000)
+DefinitionBlock ("SSDT-WLAN.aml", "SSDT", 1, "Clover", "DevInj", 0x00000000)
 {
     Method (\_SB.PCI0.RP05.ARPT._DSM, 4, NotSerialized)  // Broadcom Corporation BCM4352 802.11ac Wireless Network Adapter [14e4:43b1]
     {
