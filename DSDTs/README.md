@@ -1,19 +1,19 @@
 # DSDT Code Improvements & Edits
 
-Version 1:
+## Version 1
 * Compilation without errors
 
-Version 2:
+## Version 2
 * Compilation without warnings
 
-Version 3:
+## Version 3
 * Added vanilla Device (MCHC)
 * Added vanilla Device (EC)
 * Added vanilla Device (PMCR)
 * Added vanilla Device (BUS0) (DVL0) in Device (SBUS)
 * Disabled Device (H_EC) via Method (_STA)
 
-Version 4:
+## Version 4
 * Removed Method (_STA) from Device (MATH) to emulate iMac15,1
 * Removed IRQNoFlags {8} from Device (RTC) to emulate iMac15,1
 * Removed IRQNoFlags {0} from Device (TIMR) to emulate iMac15,1
@@ -21,7 +21,7 @@ Version 4:
 
 ## Various optimisations / Undetected device removals / Method removals
 
-Version 5:
+## Version 5
 * Removed simple Device (B0D4)
 * Removed simple Device (UAR1)
 * Removed simple Device (CIR)
@@ -39,11 +39,11 @@ Version 5:
 
 **Note:** Device (GFX0) is renamed to Device (IGPU) via WhateverGreen.kext
 
-Version 6:
+## Version 6
 * Removed Device (PS2K) (PS2M) and reference(s)
 * Renamed Device (PXSX) to Device (LAN1) (LAN2) (ARPT) respectively
 
-Version 7:
+## Version 7
 * Removed simple Device (NFC)
 * Removed simple Device (DFUD)
 * Removed Method (_DSM) from Device (RP03)
@@ -56,7 +56,7 @@ Version 7:
 * Removed Method (_INI) (_DSM) from Device (HECI)
 * Removed Method (_DSM) from Device (HDEF)
 
-Version 8:
+## Version 8
 * Removed Device (RP06) and reference(s)
 * Removed Device (RP07) and reference(s)
 * Removed Device (RP08) and reference(s)
@@ -65,7 +65,7 @@ Version 8:
 **Enabled deep sleep and deep idle properties:** per Pike R. Alpha, we can to obtain the following property:<br/>
 `IOService:/AppleACPIPlatformExpert/IOPMrootDomain/IOPMDeepIdleSupported=True`
 
-Version 9:
+## Version 9
 * Renamed Device (SAT0) to Device (SATA)
 * Removed Device (BAT0) (BAT1) (BAT2) (LID0) (DOCK) and reference(s)
 * Removed Method (_DSM) from Device (RP01)
