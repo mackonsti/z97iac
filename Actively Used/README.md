@@ -8,15 +8,39 @@ E7851IMS.4A0 (v4.10)
 
 These files have been running without issues on the official Clover **r5123.1** release on [Git Hub](https://github.com/CloverHackyColor/CloverBootloader/releases).
 
-## Clover Files Used
+## Current Clover Configuration
 
-List of files used at the moment:
+Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides device renaming. Most notably, the following keys are used:
 
-* `config.plist` → Latest tweaked Clover configuration used
-* `DSDT.aml` → Latest edited, improved and compiled custom `DSDT.dsl` code
-* `SSDT-EHCI-OFF.aml` → Allows to completely disable the EHCI controller(s)
-* `HFSPlus.efi` → Needed to boot HFS+ partitions like the macOS installer USB
-* `USBPorts.kext` → Updated USB ports injection for XHCI controller **only** (as EHCI is now disabled)
+**Enabled ACPI/Boot/Kernel/System Options**
+DSDT.aml
+* `AddMCHC` (setting now moved across as a **DSDT.aml** edit)
+* `DeleteUnused` (not sure if this is still applicable or has any impact)
+* `FixRegions` (finds all floating regions in BIOS and corrects them in custom DSDT)
+* `FixHeaders` (sanitizes headers to avoid kernel panics related to unprintable characters)
+* `EnableC2`, `EnableC6`, `EnableC7` (enable the C2, C6 and C7 states generator respectively)
+* `PluginType` (allows native CPU power management)
+* `NeverHibernate` (improves overall sleep)
+* `NoEarlyProgress` (hides any verbose pre-boot output)
+* `XMPDetection` (detect eXtreme Memory Profile for RAM since it is enabled in BIOS)
+* `PanicNoKextDump` (avoids kext-dumping in a panic situation for diagnosing problems)
+* `InjectKexts` (needed as all kexts reside in EFI folder)
+* `InjectSystemID` (sets the SmUUID as the 'system-id' at boot)
+
+**Clover Device Properties**
+* Define graphics `AAPL,ig-platform-id` for Intel HD Graphics 4600
+* Define audio `layout-id` for Realtek ALC892 HD Audio Controller
+* Define the slot, country, device type of Broadcom BCM4352 Wireless Adapter
+* Define a compatible SATA controller (`pci8086,8c83` as Intel 9 Series Chipset)
+* Define the `AAPL,slot-name` for PCI devices such as LAN1, LAN2 and MSI Radeon RX 560
+
+**Renamed Devices**
+
+None needed.
+
+## Current SSDTs Used
+
+`SSDT-EHCI-OFF.aml` is the only SSDT needed to completely disable both EHCI controller(s) so that we only use the XHCI controller for all USB ports.
 
 ## Important Notes
 
@@ -39,7 +63,7 @@ Reference: https://www.tonymacx86.com/threads/solved-sleep-shutdown.260947/
 * ApfsDriverLoader.efi
 * AptioMemoryFix.efi
 
-**Note:** The driver `AptioMemoryFix.efi` is the one that allows NVRAM to work in a transparent way, replacing older `OsxAptioFix.efi` driver.
+**Note:** Driver `AptioMemoryFix.efi` is the one that allows NVRAM to work in a transparent way, replacing older `OsxAptioFix.efi` driver.
 
 **Note:** For booting an installed system, neither driver `HFSPlus.efi` or `VBoxHfs.efi` are needed, as the main system partition is (forcibly) formatted in APFS thus making use of the **ApfsDriverLoader.efi** driver. However, one of these drivers **is needed** when booting from USB for (re-)installing macOS or experiment with OpenCore.
 
