@@ -16,4 +16,4 @@ Moreover, the full list of USB ports reported by the XHCI controller (using the 
 
 Consult **SSDT-UIAC.dsl** for more details on the MSI motherboard.
 
-![Full List Of XHCI Ports](XHCI-Full-List-Of-Ports.png)
+![XHCI-Full-List-Of-Ports](XHCI-Full-List-Of-Ports.png)
