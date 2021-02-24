@@ -21,7 +21,7 @@ Most of the SSDTs here injected a *Method* really, after enabling the respective
 		</data>
 	</dict>
 
-By renaming the native _DSM to XDSM, this allowed for custom Method (_DSM) to be injected via these SSDTs for device properties, mostly prior to macOS Catalina.
+By renaming the native `_DSM` to `XDSM` this allowed for custom `Method (_DSM)` to be injected via these SSDTs for device properties, mostly prior to macOS Catalina.
 
 * SSDT-GIGE: Injected Methods for devices (LAN1) and (LAN2) properties;
 * SSDT-HDEF: Injected Method for device (HDEF) properties and Layout ID;
@@ -33,12 +33,12 @@ Additionally:
 
 * SSDT-EHCI-OFF: A working code-injection that successfully disables the EHCI controller (useful for OpenCore);
 * SDST-OTHER: Assign names to devices that appear otherwise nameless in IORegistryExplorer (like MCHC);
-* SSDT-UIAC: Motherboard USB ports definition for using with *USBInjectAll.kext* thus solving USB problems;
-* SSDT-XOSI: Routing of official _OSI calls in DSDT to XOSI via Clover patch, allowing for OS simulation.
+* SSDT-UIAC: Motherboard USB ports definition for using with **USBInjectAll.kext** thus solving USB problems;
+* SSDT-XOSI: Routing of official `_OSI` calls in DSDT to `XOSI` via Clover patch, allowing for OS simulation.
 
 Previous SSDTs:
 * SSDT-GIGE-WLAN: Injected Methods for all original devices (PXSX) properties;
 * SSDT-HD4600: Original injected Methods for devices (IGPU) and (HDAU) properties;
 * SSDT-IGPU: Injected Methods for devices (IGPU) (HDAU) and (IMEI) for compatibility;
 * SSDT-SATA: Injected Methods for devices (LPCB) and (SATA) for compatibility;
-* SSDT-USB: Injected Methods for original devices (EHC1) (EHC2) (XHC) vanilla properties;
+* SSDT-USB: Injected Methods for original devices (EHC1) (EHC2) (XHC) vanilla properties.
