@@ -1,0 +1,56 @@
+Mojave "Vanilla" Installation
+=============================
+
+USB Installer:
+sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Rally --nointeraction --downloadassets
+
+Generate a random number with Clover Configurator and check it on Apple's Coverage Check website:
+https://checkcoverage.apple.com/us/en/?sn=GENERATEDSERIAL
+
+The following AML files were required for Mojave to work properly:
+
+SSDT-GIGE.aml  = Realtek LAN and Broadcom WLAN controller support with device and properties injection
+SSDT-HDEF.aml  = AppleALC support with injected layout ID (alternatively in Clover set boot arguments as "alcid=1")
+SSDT-OTHER.aml = Provision of ACPI names to IORegistry for various non-recognised devices (aesthetic reasons)
+SSDT-SATA.aml  = Vanilla support for compatible Intel Corporation 9 Series Chipset SATA Controller
+SSDT-UIAC.aml  = USB ports enumeration/patching for Intel Corporation 9 Series Chipset USB EHCI/XHCI Controllers
+SSDT-USB.aml   = EHCI and XHCI Controller properties and device injection for improved USB operation (e.g. power options)
+SSDT-XOSI.aml  = Improved USB behaviour by adding further Windows versions for ACPI implementation
+
+Now through Clover patching, most of device compatibility is defined in the config.plist for (IGPU) (HDEF) and (SATA)
+except a couple of AML files that are left enabled: SSDT-OTHER.aml and SSDT-XOSI.aml
+
+
+Minimal Clover UEFI Drivers (x64)
+=================================
+
+ApfsDriverLoader.efi = Recognize and boot from APFS volumes by loading apfs.efi from ApfsContainer located on block device.
+AptioMemoryFix.efi   = Needed for Afps driver and includes NVRAM fixes, as well as better memory management.
+DataHubDxe.efi       = DataHub protocol and mandatory for macOS.
+EmuVariableUefi.efi  = Support for NVRAM variables needed by macOS if hardware NVRAM is not supported.
+FSInject.efi         = Driver responsible for Clover kext injection into kernel cache.
+SMCHelper.efi        = Restore SMC keys left in NVRAM by FakeSMC (not compatible with VirtualSMC.efi)
+VBoxHfs.efi          = Open source EFI file-system driver for HFS+ file system.
+
+Abandoned/Replaced:
+OsxAptioFix3Drv.efi  = Alternate driver (v3) to fix memory problems on EFI firmware, do not use in parallel with AptioMemoryFix.
+
+N.B. The MLB variable in "Rt Variables" of Clover must include the same as "Board Serial Number" (13+4 digits) in SMBIOS.
+
+
+Basic MacOS Kernel Extensions
+=============================
+
+The following drivers are required for Mojave to work properly:
+
+Patcher       = Lilu.kext
+Audio         = AppleALC.kext
+Graphics      = WhateverGreen.kext
+Ethernet      = RealtekRTL8111.kext
+Wireless LAN  = AirportBrcmFixup.kext
+Bluetooth     = BrcmPatchRAM2.kext with BrcmFirmwareRepo.kext (in /L/E/ only)
+BT Continuity = BT4LEContinuityFixup.kext
+SMC           = FakeSMC.kext (by Slice)
+CPU Monitor   = IntelCPUMonitor.kext (by Slice)
+H/W Monitor   = HWMonitorSMC2.app (by Slice)
+USB Ports Fix = USBInjectAll.kext (obsolete due to kextless USBPorts.kext)
