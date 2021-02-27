@@ -65,7 +65,7 @@ BIOS Revision: IM151.88Z.F000.B00.2012171740<br/>
 
 ## Current Setup
 
-**Memory:** 16GB in 2 x 8GB PC3-12800 DIMM (1.5V)<br/> <br/>
+**Memory:** 16GB in 2 x 8GB PC3-12800 DIMM (1.5V)<br/>
 **RAM:** Corsair "Vengeance" DDR3LP @ 1666MHz CL9 via XMP 1.3 (Model CML16GX3M2A1600C9)<br/>
 **WLAN:** Broadcom BCM94352HMB (AzureWave AW-CE123H) [[14e4:43b1]](http://pci-ids.ucw.cz/read/PC/14e4/43b1)<br/>
 **BTLE:** Broadcom BCM20702A0 (Combined Controller) [413c:8143]<br/>
