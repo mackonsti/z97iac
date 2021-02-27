@@ -67,6 +67,20 @@ BIOS Revision: IM151.88Z.F000.B00.2012171740<br/>
 
 **Memory:** 16GB in 2 x 8GB PC3-12800 DIMM (1.5V)<br/>
 **RAM:** Corsair "Vengeance" DDR3LP @ 1666MHz CL9 via XMP 1.3 (Model CML16GX3M2A1600C9)<br/>
+**Graphics:** MSI Radeon RX 560 Aero (ITX) 4GB GDDR5 (PCI)<br/>
 **WLAN:** Broadcom BCM94352HMB (AzureWave AW-CE123H) [[14e4:43b1]](http://pci-ids.ucw.cz/read/PC/14e4/43b1)<br/>
 **BTLE:** Broadcom BCM20702A0 (Combined Controller) [413c:8143]<br/>
 **SSD:** Samsung 860 EVO SATA III 500 MB (Model MZ-76E500B/EU)<br/>
+
+## Active Configuration
+
+* No CPU ID faking required, power management is native; MSR `0xE2` unlocked in BIOS;
+* External USB 2.0 and 3.0 ports work as expected; using generated `USBPorts.kext`;
+* Graphics acceleration works as `0x0D220003` with [WhateverGreen](https://github.com/acidanthera/whatevergreen/releases);
+* Analogue audio output works as layout ID `0x01` with [AppleALC](https://github.com/acidanthera/AppleALC/releases/);
+* Digital audio output works out-of-the-box (through HDMI or DisplayPort);
+* Both embedded LAN interfaces work with [RealtekRTL8111](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases);
+* Replaced WLAN module works with [BrcmPatchRAM](https://github.com/acidanthera/BrcmPatchRAM/releases);
+* Replaced BTLE module works with [BrcmBluetoothInjector](https://github.com/acidanthera/BrcmPatchRAM/releases);
+* Sleep/Wake both work without issues; see "Power" section in [Hackintool](https://github.com/headkaze/Hackintool/releases);
+* All four SSD SATA interfaces work with no effort nor kext needed.

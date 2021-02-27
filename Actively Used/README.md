@@ -28,8 +28,7 @@ Most notably, the following keys are used:
 * `InjectKexts` (needed as all kexts now reside in EFI partition)
 * `InjectSystemID` (sets the SmUUID as the 'system-id' at boot)
 
-**Note:** User **slice** (one of the Clover developers) confirmed that `DeleteUnused` deletes such legacy devices as
-`CRT_`, `DVI_`, `SPKR`, `ECP_`, `LPT_`, `FDC_` that no longer exist anymore in modern motherboards.
+**Note:** User **slice** (one of the Clover developers) confirmed that `DeleteUnused` deletes such legacy devices as `CRT_`, `DVI_`, `SPKR`, `ECP_`, `LPT_`, `FDC_` that no longer exist anymore in modern motherboards.
 
 **Clover Device Properties**
 * Define graphics `AAPL,ig-platform-id` for Intel HD Graphics 4600
@@ -70,6 +69,6 @@ Reference: https://www.tonymacx86.com/threads/solved-sleep-shutdown.260947/
 
 **Note:** Driver `AptioMemoryFix.efi` is the one that allows NVRAM to work in a transparent way, replacing older `OsxAptioFix.efi` driver.
 
-**Note:** For booting an installed Mojave system or newer, neither driver `HFSPlus.efi` or `VBoxHfs.efi` are needed, as the main system partition is (forcibly) formatted in APFS thus making use of the `ApfsDriverLoader.efi` driver. However, one of these drivers **is needed** when booting from USB for (re-)installing macOS or experiment with OpenCore.
+**Note:** For booting an installed Mojave system (or newer) neither driver `HFSPlus.efi` or `VBoxHfs.efi` are needed, as the main system partition is (forcibly) formatted in APFS thus making use of the `ApfsDriverLoader.efi` driver. However, one of these drivers **is needed** when booting from USB for (re-)installing macOS or experiment with OpenCore.
 
 **WARNING:** Sometimes, messing with NVRAM in OpenCore leads to NVRAM corruption in Clover, requiring BIOS reset via CMOS jumper (on the motherboard) as the system fails to boot.
