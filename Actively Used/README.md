@@ -10,23 +10,26 @@ These files have been running without issues on the official Clover **r5123.1** 
 
 ## Current Clover Configuration
 
-Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides device renaming.<br/>
+Most of the configuration keys are set to **false** thus making a minimum needed set of patches, besides any device renaming.<br/>
 Most notably, the following keys are used:
 
 **Enabled ACPI/Boot/Kernel/System Options**
 * `Name` set to `DSDT.aml` (loads the custom **DSDT.aml** present)
-* `AddMCHC` (adding device `MCHC` has now moved across as a **DSDT.aml** edit)
-* `DeleteUnused` (not sure if this is still applicable or has any impact)
+* `AddMCHC` (no longer used; adding device `MCHC` is now included in custom **DSDT.aml** used)
+* `DeleteUnused` (no longer used; it normally deletes legacy devices from ACPI table)
 * `FixRegions` (finds all floating regions in BIOS and corrects them in custom DSDT)
 * `FixHeaders` (sanitizes headers to avoid kernel panics related to unprintable characters)
-* `EnableC2`, `EnableC6`, `EnableC7` (enable the C2, C6 and C7 states generator respectively)
+* `EnableC2`, `EnableC6`, `EnableC7` (enable the C2, C6 and C7 states generator, respectively)
 * `PluginType` (allows native CPU power management)
 * `NeverHibernate` (improves overall sleep)
 * `NoEarlyProgress` (hides any verbose pre-boot output)
-* `XMPDetection` (detect eXtreme Memory Profile for RAM since it is enabled in BIOS)
+* `XMPDetection` (detect eXtreme Memory Profile for RAM since it is also enabled in BIOS)
 * `PanicNoKextDump` (avoids kext-dumping in a panic situation for diagnosing problems)
-* `InjectKexts` (needed as all kexts reside in EFI folder)
+* `InjectKexts` (needed as all kexts now reside in EFI partition)
 * `InjectSystemID` (sets the SmUUID as the 'system-id' at boot)
+
+**Note:** User **slice** (one of the Clover developers) confirmed that `DeleteUnused` deletes such legacy devices as
+`CRT_`, `DVI_`, `SPKR`, `ECP_`, `LPT_`, `FDC_` that no longer exist anymore in modern motherboards.
 
 **Clover Device Properties**
 * Define graphics `AAPL,ig-platform-id` for Intel HD Graphics 4600
@@ -49,7 +52,7 @@ The `SSDT-EHCI-OFF.aml` is the only SSDT patch needed to completely disable both
 
 2. The `FSInject.efi` driver has been removed from this Clover setup as user **slice** (one of the Clover developers) confirmed it is no longer needed, despite being installed with Clover. Previous OS like Lion (10.7) and earler systems could load individual kexts during the boot process, whereas later systems like the recent Mojave (10.14) and Catalina (10.15) use the `unified prelinked kernel` process, thus rendering this Clover driver obsolete. Read more on "[The Early Boot Process](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/KernelProgramming/booting/booting.html)".
 
-3. A typical fix for the problem where *sleep and wake up* results to an apparent reboot, is to delete the preferences and reboot:
+3. A typical fix for the problem where *sleep and wake up* results to an apparent PC reboot, is to delete these preferences and restart macOS:
 
 ```
 $ cd /Library/Preferences/
@@ -63,9 +66,10 @@ Reference: https://www.tonymacx86.com/threads/solved-sleep-shutdown.260947/
 
 * ApfsDriverLoader.efi
 * AptioMemoryFix.efi
+* HFSPlus.efi
 
 **Note:** Driver `AptioMemoryFix.efi` is the one that allows NVRAM to work in a transparent way, replacing older `OsxAptioFix.efi` driver.
 
-**Note:** For booting an installed system, neither driver `HFSPlus.efi` or `VBoxHfs.efi` are needed, as the main system partition is (forcibly) formatted in APFS thus making use of the `ApfsDriverLoader.efi` driver. However, one of these drivers **is needed** when booting from USB for (re-)installing macOS or experiment with OpenCore.
+**Note:** For booting an installed Mojave system or newer, neither driver `HFSPlus.efi` or `VBoxHfs.efi` are needed, as the main system partition is (forcibly) formatted in APFS thus making use of the `ApfsDriverLoader.efi` driver. However, one of these drivers **is needed** when booting from USB for (re-)installing macOS or experiment with OpenCore.
 
 **WARNING:** Sometimes, messing with NVRAM in OpenCore leads to NVRAM corruption in Clover, requiring BIOS reset via CMOS jumper (on the motherboard) as the system fails to boot.

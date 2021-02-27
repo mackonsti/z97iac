@@ -4,7 +4,7 @@ All the files found here are SSDTs previously used for this hardware. They were 
 
 For the latest files used, see **Actively Used** folder.
 
-Most of the SSDTs here injected a *Method* really, after enabling the respective *patch* in Clover:
+Most of the SSDTs here injected a new `Method (_DSM)` really, after enabling the respective *patch* in Clover:
 
 	<dict>
 		<key>Comment</key>
@@ -33,7 +33,7 @@ Additionally:
 
 * SSDT-EHCI-OFF: A working code-injection that successfully disables the EHCI controller (useful for OpenCore);
 * SDST-OTHER: Assign names to devices that appear otherwise nameless in IORegistryExplorer (like MCHC);
-* SSDT-UIAC: Motherboard USB ports definition for using with **USBInjectAll.kext** thus solving USB problems;
+* SSDT-UIAC: Motherboard USB ports definition for using with `USBInjectAll.kext` thus solving USB problems;
 * SSDT-XOSI: Routing of official `_OSI` calls in DSDT to `XOSI` via Clover patch, allowing for OS simulation.
 
 Previous SSDTs:

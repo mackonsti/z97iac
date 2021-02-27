@@ -14,6 +14,6 @@ The full list of USB ports reported by the XHCI controller (using the unlimited 
 * HS01 → HS14
 * SS01 → SS06
 
-Consult **SSDT-UIAC.dsl** for more details on this MSI motherboard.
+Consult [SSDT-UIAC.dsl](../SSDTs/SSDT-UIAC.dsl) for more details on this MSI motherboard.
 
 ![XHCI-Full-List-Of-Ports](XHCI-Full-List-Of-Ports.png)

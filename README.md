@@ -1,6 +1,9 @@
 # MSI Z97i-AC
 
-## Generation
+This repository contains personal work and files, developed and maintained for a successful use with [Clover EFI bootloader](https://github.com/CloverHackyColor/CloverBootloader/) on this specific Intel NUC model. There are **no** ready, pre-packaged EFI solutions provided; instead, the needed configuration and ACPI files are published for those interested in studying the code, while creating their own bootloader configurations.
+
+## Platform Generation
+
 * Sandy Bridge = All Core ix-3xxx (HD Graphics 3000)
 * Ivy Bridge = All Core ix-3xxx (HD Graphics 4000)
 * **Haswell = All Core ix-4xxx (HD Graphics 4600)**
@@ -10,7 +13,15 @@
 * Coffee Lake = All Core ix-8xxx (UHD/Iris Plus Graphics 6xx)
 
 ## Product Description
+
+**Specifications:**<br/>
+https://www.msi.com/Motherboard/Z97I-AC/Specification
+
+**Downloads:**<br/>
+https://www.msi.com/Motherboard/support/Z97I-AC#down-bios
+
 **Main Characteristics:**
+
 * **Form Factor:** Mini-ITX
 * **Chipset:** Intel Z97 Express
 * **RAM:** 2 x DDR3 @ 1600MHz
@@ -20,11 +31,8 @@
 * **WLAN:** Broadcom BCM94352HMB (AzureWave AW-CE123H)
 * **BTLE:** Broadcom BCM20702A3
 
-**Specifications:** https://www.msi.com/Motherboard/Z97I-AC/Specification
+## Generation Details: Haswell Refresh (Devil's Canyon) (2014)
 
-**Downloads:** https://www.msi.com/Motherboard/support/Z97I-AC
-
-## Generation: Haswell Refresh (Devil's Canyon) (2014)
 **CPU:** Intel Core i7-4790K @ 4.00 GHz up to 4.40 GHz / 4 Cores / 8 Threads (LGA 1150)
 
 **GPU:** Intel HD Graphics 4600 / 350 MHz up to 1.25 GHz
@@ -32,9 +40,16 @@
 **URL:** https://ark.intel.com/content/www/us/en/ark/products/80807/intel-core-i7-4790k-processor-8m-cache-up-to-4-40-ghz.html
 
 ## Geekbench
+
 **V4 Scores:** https://browser.geekbench.com/v4/cpu/search?q=Core+i7-4790K
 
 **V5 Scores:** https://browser.geekbench.com/v5/cpu/search?q=Core+i7-4790K
+
+## Product Overview
+
+[Mainboard.jpg](Various/Mainboard.jpg)
+
+[RearPanel.jpg](Various/RearPanel.jpg)
 
 ## Compatible Models
 
@@ -46,3 +61,11 @@ Board ID: 42FD25EABCABB274<br/>
 BIOS Revision: IM151.88Z.F000.B00.1812191437<br/>
 BIOS Revision: IM151.88Z.F000.B00.1907241312<br/>
 BIOS Revision: IM151.88Z.F000.B00.2002052035<br/>
+
+## Current Setup
+
+**Memory:** TBC<br/>
+**RAM:** TBC<br/>
+**WLAN:** Broadcom BCM94352HMB (AzureWave AW-CE123H) [[14e4:43b1]](http://pci-ids.ucw.cz/read/PC/14e4/43b1)<br/>
+**BTLE:** Broadcom BCM20702A0 (Combined Controller) [413c:8143]<br/>
+**SSD:** Samsung 850 EVO SATA III 500 MB (Model MZ-75E500B/EU)<br/>
